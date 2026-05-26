@@ -101,20 +101,25 @@ export default function FireworksCanvas() {
     resize();
     window.addEventListener("resize", resize);
 
+    const handleWindowClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && target.closest("a, button, input, textarea, select, label, [role='button'], [data-no-fireworks]")) {
+        return;
+      }
+      fireAt(e.clientX, e.clientY);
+    };
+    window.addEventListener("click", handleWindowClick);
+
     rafRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resize);
+      window.removeEventListener("click", handleWindowClick);
       cancelAnimationFrame(rafRef.current);
     };
   }, [animate]);
 
-  const handleClick = useCallback((e: React.MouseEvent) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+  const fireAt = useCallback((x: number, y: number) => {
     const burst = createBurst(x, y);
     if (Math.random() > 0.5) {
       const offset = 30 + Math.random() * 40;
@@ -127,13 +132,11 @@ export default function FireworksCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      onClick={handleClick}
       style={{
         position: "fixed",
         inset: 0,
         zIndex: 10,
-        pointerEvents: "all",
-        cursor: "crosshair",
+        pointerEvents: "none",
       }}
       aria-hidden="true"
     />
