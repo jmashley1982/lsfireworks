@@ -161,26 +161,71 @@ function Hero() {
             letterSpacing: "0.02em",
           }}
         >
-          All styles, sizes &amp; varieties of consumer fireworks.
+          Local, family-owned seasonal fireworks stand.
         </p>
         <p
           style={{
             fontSize: "1.05rem",
             color: "rgba(255,255,255,0.75)",
             marginBottom: "2rem",
-            maxWidth: 500,
+            maxWidth: 540,
             marginLeft: "auto",
             marginRight: "auto",
           }}
         >
-          From sparklers to grand finales — everything you need for an unforgettable celebration.
+          A huge variety of brands and a massive selection to choose from. From sparklers to grand finales — everything you need for an unforgettable celebration.
         </p>
 
         <Countdown />
 
-        <div className="float-cta" style={{ display: "inline-block", pointerEvents: "all" }}>
-          <a
-            href="https://maps.google.com/?q=1234+Firecracker+Lane+Seguin+TX+78155"
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1.5rem",
+            marginBottom: "1.5rem",
+            pointerEvents: "all",
+          }}
+        >
+          <div
+            style={{
+              background: "rgba(249,168,37,0.12)",
+              border: "2px solid rgba(249,168,37,0.5)",
+              borderRadius: "0.75rem",
+              padding: "0.85rem 1.75rem",
+              display: "inline-block",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "clamp(1.3rem, 3.5vw, 1.8rem)",
+                fontWeight: 900,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: GOLD,
+                textShadow: "0 0 20px rgba(249,168,37,0.8)",
+                display: "block",
+              }}
+            >
+              Buy 1 Get 5 Free
+            </span>
+            <p
+              style={{
+                color: "rgba(255,255,255,0.6)",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+                marginTop: "0.25rem",
+                letterSpacing: "0.03em",
+              }}
+            >
+              Our biggest deal of the season — ask us about it!
+            </p>
+          </div>
+
+          <div className="float-cta">
+            <a
+            href="https://maps.google.com/?q=11614+N+State+Hwy+123+San+Marcos+TX+78666"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -215,6 +260,7 @@ function Hero() {
             Get Directions →
           </a>
         </div>
+      </div>
 
         <p
           className="sparkle-hint"
