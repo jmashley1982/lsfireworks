@@ -1,27 +1,51 @@
 import { useState, useEffect } from "react";
 
-function getTargetDate(): Date {
+/**
+ * Business open dates:
+ * June 24 – July 4
+ * December 20–23
+ * December 26 – January 1
+ */
+function getNextOpenDate(): { target: Date; label: string; isOpen: boolean } {
   const now = new Date();
-  const year = now.getFullYear();
-  const target = new Date(year, 6, 4, 0, 0, 0); // July 4
-  if (now > target) {
-    target.setFullYear(year + 1);
+  const y = now.getFullYear();
+
+  // Build all candidate windows for this year and next
+  const windows = [
+    { start: new Date(y, 5, 24, 12, 0, 0), end: new Date(y, 6, 4, 23, 59, 59), label: "Summer Season Opens" },
+    { start: new Date(y, 11, 20, 14, 0, 0), end: new Date(y, 11, 23, 18, 0, 0), label: "Winter Season Opens" },
+    { start: new Date(y, 11, 26, 12, 0, 0), end: new Date(y, 11, 31, 23, 59, 59), label: "New Year Season Opens" },
+    { start: new Date(y + 1, 5, 24, 12, 0, 0), end: new Date(y + 1, 6, 4, 23, 59, 59), label: "Summer Season Opens" },
+  ];
+
+  for (const w of windows) {
+    if (now >= w.start && now <= w.end) {
+      return { target: w.end, label: "Open Now", isOpen: true };
+    }
+    if (now < w.start) {
+      return { target: w.start, label: w.label, isOpen: false };
+    }
   }
-  return target;
+
+  // Fallback: next summer
+  return {
+    target: new Date(y + 1, 5, 24, 12, 0, 0),
+    label: "Summer Season Opens",
+    isOpen: false,
+  };
 }
 
 function getTimeLeft() {
-  const target = getTargetDate();
+  const { target, label, isOpen } = getNextOpenDate();
   const diff = target.getTime() - Date.now();
-  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, isToday: true };
-  const isToday =
-    new Date().toDateString() === new Date(target).toDateString();
+  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, label, isOpen: true };
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
     minutes: Math.floor((diff / (1000 * 60)) % 60),
     seconds: Math.floor((diff / 1000) % 60),
-    isToday,
+    label,
+    isOpen,
   };
 }
 
@@ -87,23 +111,23 @@ export default function Countdown() {
     return () => clearInterval(id);
   }, []);
 
-  if (time.isToday) {
+  if (time.isOpen) {
     return (
       <div style={{ textAlign: "center", marginBottom: "2rem" }}>
         <span
           style={{
-            background: "rgba(249,168,37,0.15)",
-            border: "2px solid #F9A825",
+            background: "rgba(76,175,80,0.15)",
+            border: "2px solid #4CAF50",
             borderRadius: 999,
             padding: "0.5rem 1.5rem",
-            color: "#F9A825",
+            color: "#4CAF50",
             fontWeight: 800,
             fontSize: "1.1rem",
             letterSpacing: "0.06em",
             textTransform: "uppercase",
           }}
         >
-          Happy 4th of July!
+          We Are Open Now!
         </span>
       </div>
     );
@@ -122,7 +146,7 @@ export default function Countdown() {
           marginBottom: "0.75rem",
         }}
       >
-        Countdown to July 4th
+        {time.label}
       </p>
       <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", alignItems: "flex-start", flexWrap: "wrap" }}>
         <Digit value={time.days} label="Days" />

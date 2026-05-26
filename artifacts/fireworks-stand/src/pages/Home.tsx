@@ -50,10 +50,10 @@ function Header() {
         >
           🧨
         </span>
-        Seguin Fireworks Stand
+        Lone Star Fireworks
       </div>
       <a
-        href="tel:+15551234567"
+        href="tel:+18305000426"
         style={{
           color: WHITE,
           fontWeight: 700,
@@ -72,7 +72,7 @@ function Header() {
           ((e.currentTarget as HTMLElement).style.background = "rgba(0,0,0,0.25)")
         }
       >
-        📞 (555) 123-4567
+        📞 (830) 500-0426
       </a>
     </header>
   );
@@ -340,11 +340,11 @@ function InfoSection() {
         }}
       >
         <InfoCard icon="📍" title="Find Us" delay={0}>
-          <p>1234 Firecracker Lane</p>
-          <p>Seguin, TX 78155</p>
+          <p>11614 N. State Highway 123</p>
+          <p>San Marcos, TX 78666</p>
           <p style={{ marginTop: "0.75rem" }}>
             <a
-              href="https://maps.google.com/?q=1234+Firecracker+Lane+Seguin+TX+78155"
+              href="https://maps.google.com/?q=11614+N+State+Hwy+123+San+Marcos+TX+78666"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -360,24 +360,28 @@ function InfoSection() {
         </InfoCard>
 
         <InfoCard icon="🕐" title="Hours of Operation" delay={100}>
-          <p>
-            <strong>June 25 – July 4</strong>
+          <p style={{ marginTop: "0.2rem", color: RED, fontWeight: 700 }}>
+            Summer Season
           </p>
-          <p style={{ marginTop: "0.4rem" }}>Mon–Fri: 10 AM – 9 PM</p>
-          <p>Sat–Sun: 9 AM – 10 PM</p>
-          <p style={{ marginTop: "0.4rem", color: RED, fontWeight: 700 }}>
-            July 4th: 8 AM – Midnight
+          <p>June 24 – July 2: 12 PM – 8 PM</p>
+          <p>July 3 – July 4: 9 AM – Midnight</p>
+          <p style={{ marginTop: "0.6rem", color: RED, fontWeight: 700 }}>
+            Winter Season
           </p>
+          <p>Dec 20 – 23: 2 PM – 6 PM</p>
+          <p>Dec 26 – 29: 12 PM – 8 PM</p>
+          <p>Dec 30 – 31: 9 AM – Midnight</p>
+          <p>Jan 1: 2 PM – 6 PM</p>
         </InfoCard>
 
         <InfoCard icon="📞" title="Contact Us" delay={200}>
           <p>
             <strong>Phone: </strong>
             <a
-              href="tel:+15551234567"
+              href="tel:+18305000426"
               style={{ color: RED, fontWeight: 700, textDecoration: "underline" }}
             >
-              (555) 123-4567
+              (830) 500-0426
             </a>
           </p>
           <p style={{ marginTop: "0.75rem" }}>
@@ -599,9 +603,9 @@ function Footer() {
       </div>
       <p>
         &copy; {new Date().getFullYear()}{" "}
-        <strong style={{ color: WHITE }}>Seguin Fireworks Stand</strong>. All rights reserved.
+        <strong style={{ color: WHITE }}>Lone Star Fireworks</strong>. All rights reserved.
       </p>
-      <p style={{ marginTop: "0.3rem" }}>Proudly serving the Seguin community.</p>
+      <p style={{ marginTop: "0.3rem" }}>Proudly serving San Marcos and the surrounding communities.</p>
     </footer>
   );
 }
