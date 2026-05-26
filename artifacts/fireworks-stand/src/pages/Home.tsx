@@ -125,7 +125,7 @@ function Hero() {
             boxShadow: "0 0 20px rgba(249,168,37,0.5)",
           }}
         >
-          Open Seasonally
+          🎆 Open Seasonally in San Marcos, TX
         </span>
 
         <h1
@@ -141,15 +141,16 @@ function Hero() {
             marginBottom: "0.75rem",
           }}
         >
-          Light Up the{" "}
+          San Marcos'{" "}
           <span
             style={{
               color: GOLD,
               textShadow: `3px 3px 0 ${RED}, 0 0 40px rgba(249,168,37,0.7)`,
             }}
           >
-            Sky
-          </span>
+            Fireworks
+          </span>{" "}
+          Stand
         </h1>
 
         <p
@@ -161,19 +162,19 @@ function Hero() {
             letterSpacing: "0.02em",
           }}
         >
-          Local, family-owned seasonal fireworks stand.
+          Family-owned &amp; locally loved — serving the San Marcos &amp; Guadalupe County area.
         </p>
         <p
           style={{
             fontSize: "1.05rem",
             color: "rgba(255,255,255,0.75)",
             marginBottom: "2rem",
-            maxWidth: 540,
+            maxWidth: 580,
             marginLeft: "auto",
             marginRight: "auto",
           }}
         >
-          A huge variety of brands and a massive selection to choose from. From sparklers to grand finales — everything you need for an unforgettable celebration.
+          Shop aerial shells, roman candles, sparklers, firecrackers, ground spinners, and grand finale kits — dozens of brands, huge selection, unbeatable prices.
         </p>
 
         <Countdown />
@@ -371,11 +372,23 @@ function InfoSection() {
           textTransform: "uppercase",
           letterSpacing: "0.05em",
           color: BLUE_DARK,
-          marginBottom: "2.5rem",
+          marginBottom: "0.6rem",
         }}
       >
-        Come Visit Us
+        Find Us in San Marcos, TX
       </h2>
+      <p
+        className="reveal"
+        style={{
+          textAlign: "center",
+          color: "#666",
+          fontSize: "0.95rem",
+          maxWidth: 520,
+          margin: "0 auto 2.5rem",
+        }}
+      >
+        Conveniently located on N. State Highway 123 — easy to find, easy to stock up on all your favorite fireworks.
+      </p>
       <div
         style={{
           display: "grid",
@@ -443,12 +456,12 @@ function ProductsSection() {
   const ref = useScrollReveal<HTMLDivElement>();
 
   const products = [
-    { icon: "✨", name: "Sparklers", desc: "Safe fun for the whole family" },
-    { icon: "🎆", name: "Aerial Shells", desc: "Big bursts lighting up the sky" },
-    { icon: "🎇", name: "Roman Candles", desc: "Classic star-shooting favorites" },
-    { icon: "🔥", name: "Ground Spinners", desc: "Colorful ground-level spectacles" },
-    { icon: "💥", name: "Firecrackers", desc: "The classic pop and bang" },
-    { icon: "🌟", name: "Grand Finales", desc: "Go out with a massive bang" },
+    { icon: "🎆", name: "Aerial Shells", desc: "Sky-high bursts of color — the crowd favorite for 4th of July shows" },
+    { icon: "🎇", name: "Roman Candles", desc: "Repeating star-shooting classics loved across Texas" },
+    { icon: "✨", name: "Sparklers", desc: "Safe, glittering fun for the whole family" },
+    { icon: "💥", name: "Firecrackers", desc: "The iconic crack and pop — Texas tradition" },
+    { icon: "🔥", name: "Ground Spinners", desc: "Colorful spinning effects right at ground level" },
+    { icon: "🌟", name: "Grand Finale Kits", desc: "Go big — multi-shot cakes that end the night in style" },
   ];
 
   return (
@@ -476,7 +489,7 @@ function ProductsSection() {
             textShadow: `2px 2px 0 ${RED}`,
           }}
         >
-          What We Carry
+          Fireworks for Every Celebration
         </h2>
         <p
           style={{
@@ -484,9 +497,12 @@ function ProductsSection() {
             color: "rgba(255,255,255,0.6)",
             marginBottom: "2.5rem",
             fontSize: "1rem",
+            maxWidth: 600,
+            marginLeft: "auto",
+            marginRight: "auto",
           }}
         >
-          All styles. All sizes. All varieties.
+          From 4th of July aerial shells to New Year's Eve grand finales — we stock the top consumer fireworks brands available in Texas, all in one convenient location on Hwy 123 in San Marcos.
         </p>
         <div
           style={{
@@ -586,11 +602,11 @@ function SafetySection() {
             marginBottom: "1rem",
           }}
         >
-          Safety First
+          Use Fireworks Safely in Texas
         </h2>
         <p style={{ color: "#555", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "1.25rem" }}>
           Always follow Texas state safety guidelines when using consumer fireworks. Keep water
-          nearby, never aim at people, and supervise children at all times.
+          nearby, never aim at people, and supervise children at all times. San Marcos and Guadalupe County residents — check your local ordinances before lighting up.
         </p>
         <div
           style={{
