@@ -500,13 +500,8 @@ function ProductsSection() {
         >
           From 4th of July aerial shells to New Year's Eve grand finales — we stock the top consumer fireworks brands available in Texas, all in one convenient location on Hwy 123 in San Marcos.
         </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1rem",
-          }}
-        >
+        <div className="products-grid">
+
           {products.map((p, i) => (
             <ProductCard key={p.name} {...p} delay={i * 60} />
           ))}
