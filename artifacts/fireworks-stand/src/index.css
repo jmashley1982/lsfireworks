@@ -188,3 +188,11 @@
 .sparkle-hint {
   animation: sparkle 2s ease-in-out infinite;
 }
+
+/* ── Header mobile ── */
+@media (max-width: 480px) {
+  .site-header {
+    justify-content: center;
+    text-align: center;
+  }
+}

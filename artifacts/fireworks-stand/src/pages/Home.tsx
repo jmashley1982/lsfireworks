@@ -10,6 +10,7 @@ const WHITE = "#FAFAFA";
 function Header() {
   return (
     <header
+      className="site-header"
       style={{
         background: RED,
         padding: "1rem 1.5rem",
