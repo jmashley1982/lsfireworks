@@ -189,10 +189,40 @@
   animation: sparkle 2s ease-in-out infinite;
 }
 
-/* ── Header mobile ── */
-@media (max-width: 480px) {
+/* ── Header layout ── */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 520px) {
   .site-header {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ── Countdown layout ── */
+.countdown-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 400px) {
+  .countdown-row {
+    gap: 0.25rem;
+  }
+  .countdown-row .countdown-sep {
+    font-size: 1.4rem !important;
+    padding-top: 6px !important;
   }
 }

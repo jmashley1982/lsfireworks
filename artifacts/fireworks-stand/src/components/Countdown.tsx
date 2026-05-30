@@ -148,13 +148,13 @@ export default function Countdown() {
       >
         {time.label}
       </p>
-      <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", alignItems: "flex-start", flexWrap: "wrap" }}>
+      <div className="countdown-row">
         <Digit value={time.days} label="Days" />
-        <div style={{ color: "#F9A825", fontSize: "2rem", fontWeight: 900, paddingTop: 4, lineHeight: 1.6 }}>:</div>
+        <div className="countdown-sep" style={{ color: "#F9A825", fontSize: "2rem", fontWeight: 900, paddingTop: 4, lineHeight: 1.6 }}>:</div>
         <Digit value={time.hours} label="Hours" />
-        <div style={{ color: "#F9A825", fontSize: "2rem", fontWeight: 900, paddingTop: 4, lineHeight: 1.6 }}>:</div>
+        <div className="countdown-sep" style={{ color: "#F9A825", fontSize: "2rem", fontWeight: 900, paddingTop: 4, lineHeight: 1.6 }}>:</div>
         <Digit value={time.minutes} label="Min" />
-        <div style={{ color: "#F9A825", fontSize: "2rem", fontWeight: 900, paddingTop: 4, lineHeight: 1.6 }}>:</div>
+        <div className="countdown-sep" style={{ color: "#F9A825", fontSize: "2rem", fontWeight: 900, paddingTop: 4, lineHeight: 1.6 }}>:</div>
         <Digit value={time.seconds} label="Sec" />
       </div>
     </div>

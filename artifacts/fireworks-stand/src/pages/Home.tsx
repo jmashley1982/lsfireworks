@@ -14,11 +14,6 @@ function Header() {
       style={{
         background: RED,
         padding: "1rem 1.5rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-        gap: "0.75rem",
         boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
         position: "sticky",
         top: 0,
