@@ -22,32 +22,15 @@ function Header() {
         pointerEvents: "all",
       }}
     >
-      <div
+      <img
+        src="/logo-transparent.png"
+        alt="Lone Star Fireworks"
         style={{
-          fontWeight: 900,
-          fontSize: "clamp(1.05rem, 3vw, 1.35rem)",
-          letterSpacing: "0.04em",
-          textTransform: "uppercase",
-          color: WHITE,
-          textShadow: `2px 2px 0 ${BLUE_DARK}, 0 0 8px rgba(255,255,255,0.3)`,
-          lineHeight: 1.2,
-          whiteSpace: "nowrap",
-          userSelect: "none",
+          height: "clamp(44px, 8vw, 60px)",
+          width: "auto",
+          display: "block",
         }}
-      >
-        <span
-          style={{
-            display: "inline-block",
-            fontSize: "1.5rem",
-            marginRight: "0.3rem",
-            animation: "bounce-icon 0.6s ease-in-out infinite alternate",
-          }}
-          aria-hidden="true"
-        >
-          🧨
-        </span>
-        Lone Star Fireworks
-      </div>
+      />
       <a
         href="tel:+18305000426"
         style={{
