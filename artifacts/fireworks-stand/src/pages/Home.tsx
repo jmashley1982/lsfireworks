@@ -26,7 +26,7 @@ function Header() {
         src="/logo-transparent.png"
         alt="Lone Star Fireworks"
         style={{
-          height: "clamp(44px, 8vw, 60px)",
+          height: "clamp(51px, 9.2vw, 69px)",
           width: "auto",
           display: "block",
         }}
