@@ -326,6 +326,59 @@ function InfoCard({ icon, title, children, delay = 0 }: InfoCardProps) {
   );
 }
 
+function StandPhotoSection() {
+  const ref = useScrollReveal<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className="reveal"
+      style={{
+        position: "relative",
+        width: "100%",
+        maxHeight: 480,
+        overflow: "hidden",
+        zIndex: 5,
+      }}
+    >
+      <img
+        src="/stand.jpg"
+        alt="The Lone Star Fireworks stand on Hwy 123 in San Marcos, TX"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center 40%",
+          display: "block",
+          maxHeight: 480,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to top, rgba(6,31,53,0.75) 0%, transparent 60%)",
+          display: "flex",
+          alignItems: "flex-end",
+          padding: "1.75rem 2rem",
+        }}
+      >
+        <p
+          style={{
+            color: "rgba(255,255,255,0.92)",
+            fontWeight: 700,
+            fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
+            letterSpacing: "0.04em",
+            textShadow: "0 2px 8px rgba(0,0,0,0.6)",
+            margin: 0,
+          }}
+        >
+          📍 Your neighborhood fireworks stand — 11614 N. State Hwy 123, San Marcos, TX
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function InfoSection() {
   const headerRef = useScrollReveal<HTMLHeadingElement>();
 
@@ -651,6 +704,7 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <StandPhotoSection />
       <InfoSection />
       <ProductsSection />
       <SafetySection />
