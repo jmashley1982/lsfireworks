@@ -62,6 +62,7 @@ function Digit({ value, label }: { value: number; label: string }) {
       }, 300);
       return () => clearTimeout(t);
     }
+    return undefined;
   }, [value, prev]);
 
   return (
