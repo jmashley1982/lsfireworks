@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lsfireworks",
+  "compatibility_date": "2026-07-24",
+  "assets": {
+    "directory": "./dist/public",
+    "not_found_handling": "404-page"
+  },
+  // Once lsfireworks.com is active on Cloudflare (DNS/registrar transfer complete),
+  // either add it as a Custom Domain in the dashboard (Worker > Settings > Domains & Routes)
+  // or uncomment the routes below and redeploy:
+  // "routes": [
+  //   { "pattern": "lsfireworks.com", "custom_domain": true },
+  //   { "pattern": "www.lsfireworks.com", "custom_domain": true }
+  // ]
+}
